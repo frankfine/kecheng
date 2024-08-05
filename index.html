@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>广东省教师继续教育信息管理平台</title>
+    <link href="/themes/teacher-education/css/reset.css" rel="stylesheet">
+    <link href="/themes/teacher-education/login/js/library/swiper/swiper-3.3.1.min.css" rel="stylesheet">
+    <link href="/themes/teacher-education/login/css/login_new.css?_=1722815517131"
+          rel="stylesheet">
+    <link href="/js/wangeditor/view.css" rel="stylesheet">
+</head>
+<body id="loginBody">
+<header class="login_header">
+    <img alt="" class="login_logo" src="/themes/teacher-education/login/images/login_logo.png">
+</header>
+<div class="banner_box">
+    <div class="swiper mySwiper">
+        <div class="con_box" style="z-index: 1">
+            <div class="inner">
+                <div class="dizuo">
+                    <img alt="" src="/themes/teacher-education/login/images/dizuo.png">
+                </div>
+                <div class="feixing feixing1">
+                    <div class="tou"></div>
+                </div>
+                <div class="feixing feixing2">
+                    <div class="tou"></div>
+                </div>
+                <div class="feixing feixing3">
+                    <div class="tou"></div>
+                </div>
+                <div class="feixing feixing4">
+                    <div class="tou"></div>
+                </div>
+                <div class="fuza_box">
+                    <div class="fuza_inner">
+                        <div class="img_box">
+
+                        </div>
+                        <div class="ball_box">
+                            <div class="ball"></div>
+                            <div class="ball2"></div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="fuza_box2">
+                    <div class="img_box2">
+                        <div class="ball"></div>
+                        <div class="ball2"></div>
+                    </div>
+                </div>-->
+                <div class="op_ball op_ball1"></div>
+                <div class="op_ball op_ball2"></div>
+                <div class="op_ball op_ball3"></div>
+                <div class="op_ball op_ball4"></div>
+                <div class="op_ball op_ball5"></div>
+            </div>
+        </div>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="con_box">
+                    <div class="inner">
+                        <div class="info jiaoshizhuanye">
+                            <img alt="" src="/themes/teacher-education/login/images/jiaoshizhuanye_info.png">
+                        </div>
+                        <div class="main_img yun">
+                            <img alt="" src="/themes/teacher-education/login/images/yun.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="con_box">
+                    <div class="inner">
+                        <div class="info jiaoneng">
+                            <img alt="" src="/themes/teacher-education/login/images/jiaoneng_info.png">
+                            <img alt="" class="jiaoneng_qr"
+                                 src="/themes/teacher-education/login/images/jiaoneng_qr.png">
+                        </div>
+                        <div class="main_img jiaoneng">
+                            <a href="https://cms.haoyuinfo.com/bms/#/mainOutDash?id=1" target="_blank"><img alt=""
+                                                                                                            src="/themes/teacher-education/login/images/jiaoneng_main.png"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="con_box">
+                    <div class="inner">
+                        <div class="info jiaoshiyidong">
+                            <img alt="" src="/themes/teacher-education/login/images/jiaoshiyidong_info.png">
+                            <img alt="" class="jiaoshiyidong_qr"
+                                 src="/themes/teacher-education/login/images/jiaoshiyidong_qr.png">
+                        </div>
+                        <div class="main_img jiaoshiyidong">
+                            <img alt="" src="/themes/teacher-education/login/images/weChat.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="login_box">
+        <div id="g-logBox">
+            <div class="m-log-box">
+                <div class="m-tab-li f-cb">
+                    <a class="item1 z-crt" href="javascript:void(0);"><span>账号登录</span></a>
+                    <a class="item2" href="javascript:void(0);" onclick="qrLogin()"><span>微信登录</span></a>
+                </div>
+                <div class="m-tab-cont f-cb">
+                    <div class="m-log-block">
+                        <p class="new_teach_tip">
+                            <img alt="" src="/themes/teacher-education/login/images/tip.png"
+                                 style="margin-right: 4px">新教师注册，请联系学校管理员登录平台创建账号。
+                        </p>
+                        <form id="loginForm"
+                              action="/loginIn.do"
+                              method="post">
+                            <label class="m-ipt-mod m-ipt-account">
+                                <input type="hidden" name="loginUser.userName"/>
+                                <input type="hidden" name="loginUser.loginType"
+                                       value="normal"/>
+
+                                <input class="u-ipt" id="userName" placeholder="账号" type="text" autocomplete="off">
+                                <div class="login-popup-hint">
+                                    <i></i>
+                                    <span class="txt">请输入正确的账号！</span>
+                                </div>
+                                <b class="icon-war-error ico"></b>
+                            </label>
+
+                            <label class="m-ipt-mod m-ipt-password pd">
+                                <input type="hidden" name="loginUser.password">
+
+                                <input id="password" class="u-ipt" placeholder="密码" type="password"
+                                       autocomplete="off">
+                                <div class="login-popup-hint">
+                                    <i></i>
+                                    <span class="txt">你的密码不正确，请重新输入！</span>
+                                </div>
+                                <b class="icon-war-error ico"></b>
+                                <a class="psd-mask">
+                                    <i class="icon-open none"></i>
+                                    <i class="icon-close"></i>
+                                </a>
+                            </label>
+                            <label class="m-ipt-mod m-verification m-ipt-captcha">
+                                <input id="captcha" name="captcha" class="u-ipt" placeholder="验证码" type="text"
+                                       autocomplete="off">
+                                <div class="login-popup-hint captcha-hint">
+                                    <i></i>
+                                    <span class="txt">请输入验证码！</span>
+                                </div>
+                                <b class="icon-war-error ico captcha-error"></b>
+                                <div class="verif-img" style="width:50%" onclick="reloadCaptcha()">
+                                    <img id="loginCaptcha"
+                                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAEUlEQVQImWP8DwQMQMDEAAUAPfgEAJtlyeIAAAAASUVORK5CYII="
+                                         alt="点击刷新验证码">
+                                </div>
+                            </label>
+                            <p class="m-errors" id="errorText" style="margin: 10px;font-size:12px"></p>
+                            <div class="link-reg" style="justify-content: flex-end">
+                                <div></div>
+                                <span style="justify-self: flex-end">
+                                    <a href="/retrieve/forget.action" target="_blank">忘记密码？</a>
+                                </span>
+                            </div>
+
+                            <div class="m-btn-row">
+                                <button class="main-btn1 btn" onclick="return submit_f();"
+                                        style='background: #057BFF;'><em>登录</em></button>
+                            </div>
+                            <div class="link-reg">
+                                <input checked="true" id="agreement" onclick="$('#errorText').text('');" type="checkbox"
+                                       value="1">
+                                <span class="agree">
+                                    <span style="color: #7f7f7f;">
+                                        我已阅读并同意
+                                    </span>
+                                    <a href="/template/user_agreement.html" target="_blank">《用户协议》</a>
+                                    <a href="/template/user_privacy_statement.html"
+                                       target="_blank">《隐私保护条款》</a>
+                                </span>
+                            </div>
+                            <div class="divider">
+                                <span>点下方教师人脸识别免密码登录</span>
+                            </div>
+
+                            <a class="platform" id="gdstysfrzptdl"
+                               href="https://tyrz.gd.gov.cn/pscp/sso/connect/page/oauth2/authorize?service=initService&response_type=code&client_id=tyrz_gdjsjxjyxxglpt&scope=all&redirect_uri=https%3A%2F%2Fjsglpt.gdedu.gov.cn%2FtifCallBack.action">
+                                <img alt="" src="/themes/teacher-education/login/images/login_all.png">
+                            </a>
+
+
+
+                        </form>
+                    </div>
+                    <div class="m-tdc-block">
+                        <div class="m-tdc-img">
+                            <div class="qr_box">
+                                <div class="qr_slide qr_s1"></div>
+                                <div class="qr_slide qr_s2"></div>
+                                <div class="qr_slide qr_s3"></div>
+                                <div class="qr_slide qr_s4"></div>
+                                <img alt="二维码" id="qrImg">
+                            </div>
+                        </div>
+                        <div class="qr_info">
+                            <p>使用微信扫一扫登录平台</p>
+                            <p style="margin-top: calc(70 * var(--rpx)); font-size: 14px">
+                                未绑定微信用户，请扫码后关注“广东二师在线”公众号进入【继教平台】登录即绑定。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="notice_box">
+    <div class="title">
+        <img alt="" src="/themes/teacher-education/login/images/notice.png">
+        <p class="text_box">网站公告</p>
+    </div>
+    <div class="notice_list" id="cmsNoticeList">
+
+    </div>
+</div>
+<div class="contact_box">
+    <div class="ct_right">
+        <div class="l_item r_item">
+            <img alt="" src="/themes/teacher-education/login/images/qr.png">
+            <div>
+                <p class="l_name">
+                    广东二师在线微信公众号
+                </p>
+                <p class="l_des">扫一扫关注公众号，进入【继教平台】绑定微信账号</p>
+            </div>
+        </div>
+    </div>
+    <div class="center_con">
+        <div class="l_item">
+            <img alt="" src="/themes/teacher-education/login/images/info.png">
+            <div>
+                <p class="l_name kfOnline">
+                    在线客服
+                    <img alt="" src="/themes/teacher-education/login/images/zaixiankefu.png">
+                </p>
+                <p class="l_des"> 工作日8:30至21:30，周末9:00-18:00</p>
+            </div>
+        </div>
+    </div>
+    <div class="ct_left">
+        <div class="l_item">
+            <img alt="" src="/themes/teacher-education/login/images/contact.png">
+            <div>
+                <p class="l_name kfOnline">
+                    联系我们
+
+                </p>
+                <p class="l_des"> 服务热线：400-998-9352</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer_box">
+    <div class="fo_info">
+        版权所有：<a href="http://edu.gd.gov.cn" target="_blank">广东省教育厅师资管理处</a>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        地址：<span style="color: #444554">广州市东风东路723号</span>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        管理运维：<a href="http://www.gdei.edu.cn" target="_blank">广东第二师范学院</a>
+        &nbsp;&nbsp;｜&nbsp;&nbsp;
+        技术支持：<a href="http://www.haoyuinfo.com" target="_blank">广州昊誉信息科技有限公司</a>
+        &nbsp;&nbsp;｜&nbsp;&nbsp;
+        <a href="http://beian.miit.gov.cn" target="_blank">粤ICP备09132871号-2</a>
+    </div>
+</div>
+
+<div class="c_modal webInfoModal" style="color: #2F3842">
+    <!--    <div class="modal_mask"></div>-->
+    <div class="modal">
+        <div class="close_btn">X</div>
+        <div class="m_header">
+            网站公告
+        </div>
+        <div class="m_title">
+            <h1 id="noticeTitle"></h1>
+            <p class="p_date">
+                <span id="publishName"></span>
+                <span id="publishDate"></span>
+            </p>
+        </div>
+        <div class="m_content" style="height: calc(70vh - 68px); overflow-y: scroll">
+            <div class="m_content_inner" id="noticeContent">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/jquery/jquery.js" type="text/javascript"></script>
+<script src="/themes/teacher-education/login/js/library/swiper/swiper-3.3.1.jquery.min.js"></script>
+<script src="/themes/teacher-education/login/js/login.js" type="text/javascript"></script>
+<script type="text/javascript" src="/js/common/base64.js"></script>
+<script type="text/javascript">
+
+    const swiper = new Swiper('.mySwiper', {
+        loop: true,
+        direction: 'vertical',
+        pagination: '.swiper-pagination',
+        paginationType: 'bullets',
+        paginationClickable: true,
+        autoplay: 10000,
+    })
+
+    var isLoingQr = false;
+    var seconds = 0;
+    var autoInterval;
+
+    function qrLogin() {
+        if (!isLoingQr) {
+            $('#qrImg').prop("src", "/h5wechat/getQrcode.action");
+            isLoingQr = true;
+
+            autoInterval = checkScanResult();
+        }
+    }
+
+    //定义定时器
+    function checkScanResult() {
+        return setInterval(function () {
+            seconds += 3;
+            $.ajax({
+                url: '/h5wechat/checkScanResult.action',
+                success: function (res) {
+                    if (res.code === '200') {
+                        window.location.href = '/default.jsp';
+                    }
+                },
+                error: function (e) {
+                    console.log('error');
+                }
+            });
+
+            if (seconds >= 1800) {
+                clearInterval(autoInterval);
+                history.go(0);
+            }
+
+        }, 3000); //秒
+    }
+
+    $(function () {
+
+        $('.kfOnline').click(() => {
+            window.open("https://18027314370.udesk.cn/im_client/?web_plugin_id=46705", "newwindow", "height=800, width=1000, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no")
+        });
+
+
+        
+
+        if ($('body').attr('id') != 'loginBody' || window.parent != self) {
+            window.parent.location.href = '/login.action';
+        }
+
+        reloadCaptcha()
+
+        $('.m-ipt-account .u-ipt').blur(function () {
+            if (!$(this).val()) {
+                //帐号错误提示框
+                loginJs.indexs.accountPopupHint({
+                    txt: '请输入账号！'
+                })
+            }
+        })
+        $('.m-ipt-password .u-ipt').blur(function () {
+            if (!$(this).val()) {
+                //密码错误提示框
+                loginJs.indexs.passwordPopupHint({
+                    txt: '请输入密码！'
+                })
+            }
+        })
+
+        //提交时去掉提示
+        /*$('.main-btn1').on('click', function () {
+            loginJs.indexs.PopupHintHide('.m-ipt-account')
+            loginJs.indexs.PopupHintHide('.m-ipt-password')
+        })*/
+
+        $('.psd-mask').on('click', function () {
+            if ($('.m-ipt-password .icon-open').hasClass('none')) {
+                $('.m-ipt-password .icon-close').addClass('none')
+                $('.m-ipt-password .icon-open').removeClass('none')
+                $('.u-ipt').prop('type', 'text')
+            } else if ($('.m-ipt-password .icon-close').hasClass('none')) {
+                $('.m-ipt-password .icon-open').addClass('none')
+                $('.m-ipt-password .icon-close').removeClass('none')
+                $('.m-ipt-password .u-ipt').prop('type', 'password')
+            }
+        })
+
+        // 获取通知通告
+        $.ajax({
+            url: '/cms/getNotice.action',
+            success: function (res) {
+                if (res.code === '00' && res.data.length > 0) {
+                    var html = '';
+
+                    for (var i in res.data) {
+                        var notice = res.data[i];
+                        html += '<div class="notice_item" onclick="openNotice(\'' + notice.id + '\', \'' + notice.noticeTitle + '\', \'' + notice.creatTime + '\')">'
+                            +'    <div class="date">' + notice.creatTime + '</div>'
+                            +'    <div class="content">' + notice.noticeTitle + '</div>'
+                            +'    <img class="arrow_right" alt="" src="/themes/teacher-education/login/images/arrow-right.png">'
+                            +'</div>';
+                    }
+
+                    $('#cmsNoticeList').html(html);
+
+                    const noticeEle = document.getElementsByClassName('notice_item')
+                    for (let i = 2; i < noticeEle.length; i+=4) {
+                        if (noticeEle[i]) {
+                            noticeEle[i].className = 'notice_item gbg'
+                            if (noticeEle[i+1]) {
+                                noticeEle[i+1].className = 'notice_item gbg'
+                            }
+                        }
+                    }
+                }
+            },
+            error: function (e) {
+                console.log('error');
+            }
+        });
+
+        $('.close_btn').click(() => {
+            $('.webInfoModal').removeClass('show_modal')
+        })
+    })
+
+    function openNotice(id, title, date) {
+        $.ajax({
+            type: 'GET',
+            url: '/cms/getCmsNoticeInfo.action?id=' + id,
+            success: function(res) {
+                $('#noticeTitle').html(title);
+                $('#publishDate').html('发布时间：'+ date);
+                $('#noticeContent').html(res);
+                $('.webInfoModal').addClass('show_modal');
+            }
+        });
+
+    }
+
+    function submit_f() {
+        loginJs.indexs.PopupHintHide('.m-ipt-account');
+        loginJs.indexs.PopupHintHide('.m-ipt-password');
+        $('#captcha_hintPopup').hide(0);
+        $('#captcha_error').hide(0);
+        if ($("#userName").val().trim() == '') {
+            loginJs.indexs.accountPopupHint({
+                txt: "请输入帐号！"
+            });
+            return false;
+        } else if ($("#password").val() == '') {
+            loginJs.indexs.passwordPopupHint({
+                txt: "请输入密码！"
+            });
+            return false;
+        } else if (!$("#agreement").prop("checked")) {
+            $('#errorText').text("请阅读并同意 《用户协议》《隐私保护条款》");
+            return false;
+        } else if ($("#captcha").val().trim() == '') {
+            //验证码提示框
+            loginJs.indexs.captchaPopupHint({
+                txt: '请输入验证码！'
+            })
+            return false;
+        }
+        var encoder = new Base64();
+        $('input[name="loginUser.userName"]').val(encoder.encode($('#userName').val()));
+        $('input[name="loginUser.password"]').val(encoder.encode($('#password').val()));
+        return true;
+        //$("#loginForm").submit();
+    }
+
+    function reloadCaptcha() {
+        $.ajax({
+            url: '/login/readCaptcha.action?d=' + Math.random(),
+            type: "get",
+            success: function (data) {
+                $('#loginCaptcha').attr('src', data);
+            }
+        });
+    }
+
+    /* 公告样式 */
+    const getOri = (originalArray) => {
+        const newArray = [];
+        for (let i = 3; i < originalArray.length; i+=4) {
+            newArray.push(i, i+1);
+        }
+        return newArray
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    (function(a,h,c,b,f,g){a["UdeskApiObject"]=f;a[f]=a[f]||function(){(a[f].d=a[f].d||[]).push(arguments)};g=h.createElement(c);g.async=1;g.charset="utf-8";g.src=b;c=h.getElementsByTagName(c)[0];c.parentNode.insertBefore(g,c)})(window,document,"script","//assets-cli.udesk.cn/im_client/js/udeskApi.js","ud");
+    ud({
+        "code": "28kkeghj",
+        "link": "https://18027314370.udesk.cn/im_client/?web_plugin_id=46705"
+    });
+</script>
+
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?1bf654a6abeafaf71c27bb383e5a01f9";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+</body>
+</html>
